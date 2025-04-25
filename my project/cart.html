@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛒 سلة التسوق</title>
+    <link rel="stylesheet" href="../css/style2.css"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header class="Navbar">
+        <h1>🛒 سلة التسوق</h1>
+    </header>
+
+    <div class="cart">
+        <div id="cart-items">
+            
+        </div>
+        <h3>المبلغ الكلي: $<span id="total-price">0</span> </h3>
+        <button onclick="proceedToPayment()">  ! الطلب الان </button> <!-- الزر لتأكيد الطلب -->
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function displayCart() {
+            let cartItemsContainer = document.getElementById("cart-items");
+            let totalPrice = 0;
+            cartItemsContainer.innerHTML = ""; // تفريغ المحتوى السابق
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class ="empty"> ! السلة فارغة </p>';
+                document.getElementById("total-price").innerText = "0";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                let itemTotal = item.price * item.quantity; // حساب المجموع لكل منتج
+                totalPrice += itemTotal; // جمع السعر الإجمالي
+                cartItemsContainer.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <p>  ${item.name}  |  المجموع : $ ${itemTotal}  |  السعر : ${item.price} $  |  الكمية :  ${item.quantity}  </p>
+                        <button onclick="removeItem(${index})"> ازالة</button>
+                    </div>
+                `;
+            });
+
+            document.getElementById("total-price").innerText = totalPrice;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+        function clearCart() {
+    localStorage.removeItem("cart");
+   
+    window.location.href = 'payment_delivery.html';  
+}
+
+        function proceedToPayment() {
+            if (cart.length === 0) {
+                alert(" السلة فارغة! يرجى إضافة منتجات قبل متابعة الطلب.");
+            } else {
+            
+                clearCart();  
+    
+                window.location.href = "payment_delivery.html"; 
+            }
+        }
+
+        displayCart();
+    </script>
+     <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+          window.location.href = "login.html";
+        }
+      </script>
+
+</body>
+</html>
+
+

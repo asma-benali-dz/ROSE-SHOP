@@ -1,0 +1,92 @@
+.main{ 
+    width: 40%;
+    box-shadow: 1px 1px 10x silver;
+    margin-top: 45px;
+    padding: 10px;
+   }
+   h2{
+    font-family: 'Cairo', sans-serif; 
+   }
+   input{
+    margin-bottom: 10px;
+    width: 60%;
+    padding: 5px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+   }
+   button{
+    border:none;
+    padding: 10px;
+    width: 40%;
+    font-weight:bold;
+    font-size :15px;
+    background-color: #1AC15C ;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    margin-bottom: 15px;
+   }
+   label{
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    background-color:#1F87CF;
+    font-family: 'Cairo', sans-serif;
+    color:while;
+   }
+   a{
+    text-decoration: none;
+    font-size:20px;
+    color:tomato;
+    font-family: 'Cairo', sans-serif;
+    font-weight:bold;
+    }
+    
+
+
+    /* General styling for the page */
+body.bg-light {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Styling for the cart table */
+table.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table.table th, table.table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table.table thead {
+    background-color: #343a40;
+    color: #fff;
+}
+
+table.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table.table tfoot {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* Styling for images in the cart */
+.cart-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+

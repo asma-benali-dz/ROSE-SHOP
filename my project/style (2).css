@@ -1,0 +1,266 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+   background:linear-gradient(#eddde8,#eddde8);
+   height: 100%;
+   font-family: system-ui;
+ }  
+ a{
+    text-decoration: none;
+    color: #e41dd4;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 90px;; 
+    width: 100%; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    direction: rtl;
+}
+.nav  ul li{
+    margin-left: 70px;
+   
+}
+.nav li a{
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 18px; /* حجم الخط */
+    font-weight: bold
+}
+.nav  ul li a:hover ,.active{
+    background: #eb119b;
+    color: #0d0108;
+}
+.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 29px; /* زيادة المسافة بين العنوان والمنتجات */
+    font-weight: bold;
+    color: #333;
+}
+
+
+ .prodects {
+    text-align: center;
+    padding: 30px;
+}
+
+.picters {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* جعل البطاقات أصغر */
+    gap: 20px;
+    justify-content:center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 150px; 
+
+}
+.card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.picter {
+    width: 200px;;
+    height: 130px; 
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.card h3 {
+    font-size: 14px; /* تصغير النص */
+    margin: 5px 0;
+}
+
+.card .price {
+    font-size: 13px;
+    font-weight: bold;
+    color: #d62f2f;
+
+}
+
+.card button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 6px 6px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 10px; /* تصغير الزر */
+    width: 80%; /* جعل الزر يأخذ عرضًا مناسبًا */
+    margin-top: auto; 
+
+}
+
+.card button:hover {
+    background-color: #e91e63;
+}
+.slider-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 30px; /* يضيف مسافة من الأعلى */
+
+  }
+  
+  .slider-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .slider-track img {
+    width: 100%;
+    height: 530px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .slider-dots {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .dot {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #fd5aab; 
+  }
+  
+  .coming-soon-section {
+    padding: 60px 20px;
+    background-color: #eddde8;
+    text-align: center;
+  }
+  
+  .coming-soon-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #0b0a0b;
+    font-weight: bold;
+  }
+  
+  .coming-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fae2ee;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+    gap: 10px;
+  }
+  
+  .coming-card img {
+    max-width: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+    
+  }
+  
+  .coming-info {
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .coming-info h3 {
+    font-size: 1.6rem;
+    color: #1c1c1c;
+    margin-bottom: 10px;
+  }
+  
+  .coming-info h4 {
+    font-size: 2.5rem;
+    color: #ef4a89;
+    margin-bottom: 10px;
+  }
+  
+  .coming-info h5 {
+    font-size: 1.8rem;
+    color: #1d1c1c;
+    margin-bottom: 15px;
+  }
+  
+  .coming-info p {
+    font-size: 1.3rem;
+    color: #f90a0a;
+    margin-bottom: 20px;
+  }
+  
+  .coming-button {
+    background-color: #ef4a89;
+    color:#f8f1f4;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 35px;
+    font-size: 1rem;
+    cursor: not-allowed;
+  }
+  
+  .section-divider {
+    border: none;
+    height: 2px;
+    background-color: #0c0b0b;
+    width: 80%;
+    margin: 40px auto;
+    border-radius: 10px;
+  }
+
+  .coming-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+  }
+  
+  .coming-card img:hover {
+    transform: scale(1.08); /* تكبير ناعم */
+  }
+  html {
+    scroll-behavior: smooth;
+}
+ 
+      

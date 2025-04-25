@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الدفع والتوصيل</title>
+    <link rel="icon" href="favicon.ico"type="image/x-icon">
+    <form id="orderForm" action="process_order.php" method="POST">
+    </form>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("https://i.pinimg.com/736x/ef/b9/96/efb99694c3d1c573de6580b83ccdbad0.jpg") no-repeat center center fixed;
+            background-size: cover;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #3d2b1f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #3d2b1f;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #5a3e2b;
+        }
+
+        #cardDetails {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>صفحة الدفع والتوصيل</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="paymentMethod">وسيلة الدفع 💳</label>
+                <select id="paymentMethod" required>
+                    <option value="">اختر وسيلة الدفع</option>
+                    <option value="creditCard">بطاقة ائتمان</option>
+                    <option value="paypal">باي بال</option>
+                </select>
+            </div>
+
+            <div id="cardDetails">
+                <div class="form-group">
+                    <label for="cardNumber">رقم البطاقة</label>
+                    <input type="text" id="cardNumber" placeholder="أدخل رقم البطاقة" pattern="\d{16}" maxlength="16">
+                </div>
+                <div class="form-group">
+                    <label for="cardCVC">الرمز السري (CVC)</label>
+                    <input type="password" id="cardCVC" placeholder="أدخل الرمز السري" pattern="\d{3}" maxlength="3">
+                </div>
+            </div>
+
+            <h3>معلومات التوصيل 📦</h3>
+
+            <div class="form-group">
+                <label for="country">الدولة</label>
+                <input type="text" id="country" placeholder="أدخل الدولة" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">الولاية / المقاطعة</label>
+                <input type="text" id="state" placeholder="أدخل الولاية / المقاطعة" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">المدينة</label>
+                <input type="text" id="city" placeholder="أدخل اسم المدينة" required>
+            </div>
+
+            <div class="form-group">
+                <label for="district">الحي</label>
+                <input type="text" id="district" placeholder="أدخل اسم الحي" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">العنوان التفصيلي</label>
+                <input type="text" id="address" placeholder="أدخل العنوان كاملاً" required>
+            </div>
+
+            <button type="submit" class="btn">إتمام الطلب</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            var cardDetails = document.getElementById('cardDetails');
+            var cardNumber = document.getElementById('cardNumber');
+            var cardCVC = document.getElementById('cardCVC');
+
+            if (this.value === "creditCard") {
+                cardDetails.style.display = "block";
+                cardNumber.setAttribute('required', 'true');
+                cardCVC.setAttribute('required', 'true');
+            } else {
+                cardDetails.style.display = "none";
+                cardNumber.removeAttribute('required');
+                cardCVC.removeAttribute('required');
+            }
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var paymentMethod = document.getElementById('paymentMethod').value;
+            var cardNumber = document.getElementById('cardNumber').value;
+            var cardCVC = document.getElementById('cardCVC').value;
+
+            if (paymentMethod === "creditCard") {
+                var cardNumberRegex = /^\d{16}$/;
+                var cardCVCRegex = /^\d{3}$/;
+
+                if (!cardNumberRegex.test(cardNumber)) {
+                    alert("يرجى إدخال رقم بطاقة صالح مكون من 16 رقمًا.");
+                    return;
+                }
+                if (!cardCVCRegex.test(cardCVC)) {
+                    alert("يرجى إدخال رمز CVC صالح مكون من 3 أرقام.");
+                    return;
+                }
+            }
+
+            alert('تم تأكيد الطلب بنجاح! سيتم إرسال إشعار لك.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+<script>
+    document.getElementById('paymentMethod').addEventListener('change', function() {
+        var cardDetails = document.getElementById('cardDetails');
+        var cardNumber = document.getElementById('cardNumber');
+        var cardCVC = document.getElementById('cardCVC');
+
+        if (this.value === "creditCard") {
+            cardDetails.style.display = "block";
+            cardNumber.setAttribute('required', 'true');
+            cardCVC.setAttribute('required', 'true');
+        } else {
+            cardDetails.style.display = "none";
+            cardNumber.removeAttribute('required');
+            cardCVC.removeAttribute('required');
+        }
+    });
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var paymentMethod = document.getElementById('paymentMethod').value;
+        var cardNumber = document.getElementById('cardNumber').value;
+        var cardCVC = document.getElementById('cardCVC').value;
+
+        if (paymentMethod === "creditCard") {
+            var cardNumberRegex = /^\d{16}$/;
+            var cardCVCRegex = /^\d{3}$/;
+
+            if (!cardNumberRegex.test(cardNumber)) {
+                alert("يرجى إدخال رقم بطاقة صالح مكون من 16 رقمًا.");
+                return;
+            }
+            if (!cardCVCRegex.test(cardCVC)) {
+                alert("يرجى إدخال رمز CVC صالح مكون من 3 أرقام.");
+                return;
+            }
+        }
+
+        alert('تم تأكيد الطلب بنجاح! سيتم إرسال إشعار لك.');
+        this.reset();
+    });
+</script>
+</body>
+</html>

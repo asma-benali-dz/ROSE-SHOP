@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر التجميل</title>   
+    <link rel="icon" href="favicon.ico"type="image/x-icon">
+
+    <style>
+        /* تنسيق عام */
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        /* ترويسة الموقع */
+        header {
+            background: #d63384;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+        /* الحاويات */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        /* العناوين */
+        h2 {
+            text-align: center;
+            background: #ff99cc;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        /* تنسيق المنتجات */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #ccc;
+            text-align: center;
+        }/* تأثير التكبير عند تمرير الماوس */
+.product:hover {
+    transform: scale(1.1);  /* تكبير المنتج بنسبة 10% */
+    box-shadow: 0px 0px 15px #999; /* إضافة ظل لزيادة الوضوح */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: red;
+            font-size: 16px;
+        }
+        .new-price {
+            color: green;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .product button {
+            width: 100%;
+            background-color: #d33a5e;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .product button:hover {
+            background: #c82373;
+        }
+       
+    </style>
+    </head>
+    <body>
+    
+        <header>متجر التجميل</header>
+   
+        <!-- قسم المكياج -->
+        <section class="container" >
+            <h2>منتجات المكياج</h2>
+            <div class="products">
+                <div class="product"><img src="../images/photo_11_2025-03-18_16-07-42.jpg" alt="palette blash & contor"><h3>Palette</h3><p><s class="old-price">40 $</s> <span class="new-price">35 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('palette blash & contor ', 35,'../images/photo_11_2025-03-18_16-07-42.jpg')">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_2_2025-03-18_16-07-42.jpg" alt="Highlighter"><h3>Highlighter Sheglam</h3><p><s class="old-price">25 $</s> <span class="new-price">22 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Highlighter Sheglam', 22,'../images/photo_2_2025-03-18_16-07-42.jpg')">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_12_2025-03-18_16-07-42.jpg" alt="Gloss"><h3>Gloss</h3><p><s class="old-price">9 $</s> <span class="new-price">7 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Gloss',7,'../images/photo_12_2025-03-18_16-07-42.jpg')">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_7_2025-03-18_16-07-42.jpg" alt="Tint"><h3>Tint Benefit</h3><p><s class="old-price">18 $</s> <span class="new-price">15 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Tint Benefit',15,'../images/photo_7_2025-03-18_16-07-42.jpg' )">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_3_2025-03-18_16-07-42.jpg" alt="Loose Powder"><h3>Loose Powder</h3><p><s class="old-price">15 $</s> <span class="new-price">12 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Loose Powder',12,'../images/photo_3_2025-03-18_16-07-42.jpg' )">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_8_2025-03-18_16-07-42.jpg" alt="Foundation NARS"><h3>Foundation NARS</h3><p><s class="old-price">45 $</s> <span class="new-price">40 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Foundation NARS ', 40,'../images/photo_8_2025-03-18_16-07-42.jpg')">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_2025-03-19_22-19-57.jpg" alt="Concealer Tarte"><h3>Concealer Tarte</h3><p><s class="old-price">17 $</s> <span class="new-price">12 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Concealer Tarte', 12,'../images/photo_2025-03-19_22-19-57.jpg')">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_9_2025-03-18_16-07-42.jpg" alt="mascara "><h3>mascara sky high</h3><p><s class="old-price">12 $</s> <span class="new-price">15 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('mascara sky high ',15,'../images/photo_9_2025-03-18_16-07-42.jpg' )">إضافة إلى السلة</button></div>
+                <div class="product"><img src="../images/photo_4_2025-03-18_16-07-42.jpg" alt="contor stick fenty beauty "><h3>contor fenty beauty</h3><p><s class="old-price">32 $ </s> <span class="new-price">29 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('contor fenty beauty',29,'../images/photo_4_2025-03-18_16-07-42.jpg' )">إضافة إلى السلة</button></div>
+            </div>
+        </section>
+    <!-- قسم العناية بالبشرة -->
+    <section class="container" >
+      <h2>منتجات العناية بالبشرة</h2>
+      <div class="products">
+          <div class="product"><img src="../images/photo_5_2025-03-18_16-07-42.jpg" alt="The Ordinary AHA 30% BHA 2%"><h3>The Ordinary AHA 30% BHA 2%</h3><p><s class="old-price">25 $</s> <span class="new-price">20 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('The Ordinary AHA 30% BHA 2%',20,'../images/photo_5_2025-03-18_16-07-42.jpg' )">إضافة إلى السلة</button></div>
+          <div class="product"><img src="../images/photo_10_2025-03-18_16-07-42.jpg"alt= "Kylie Skin"><h3>Kylie Skin</h3><p><s class="old-price">35 $</s> <span class="new-price">29 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Kylie Skin', 29,'../images/photo_10_2025-03-18_16-07-42.jpg')">إضافة إلى السلة</button></div>
+          <div class="product"><img src="../images/photo_1_2025-03-18_16-07-42.jpg" alt="ماسك الشفاه"><h3>ماسك الشفاه</h3><p><s class="old-price">25 $</s> <span class="new-price">20 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('ماسك الشفا', 25,'../images/photo_1_2025-03-18_16-07-42.jpg')">إضافة إلى السلة</button></div>
+          <div class="product"><img src="../images/photo_6_2025-03-18_16-07-42.jpg" alt="Kocostar Eye Patches"><h3>Kocostar Eye Patches</h3><p><s class="old-price">17 $</s> <span class="new-price">15 $</span></p><input type="number" min="1" max="6"><button onclick="addToCart('Kocostar Eye Patches',15 ,'../images/photo_6_2025-03-18_16-07-42.jpg' )">إضافة إلى السلة</button></div>
+      </div>
+    </section>
+   <script>
+    function addToCart(productName, price, imageUrl) {
+    let quantityInput = event.target.previousElementSibling; // الحصول على الـ input المجاور
+    let quantity = parseInt(quantityInput.value) || 1; // قراءة الكمية المدخلة أو تعيينها لـ 1
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    // البحث إذا كان المنتج مضافًا مسبقًا
+    let existingProduct = cart.find(item => item.name === productName);
+
+    if (existingProduct) {
+        existingProduct.quantity += quantity; // تحديث الكمية
+    } else {
+        cart.push({ name: productName, price: price, image: imageUrl, quantity: quantity });
+    }
+
+    // تحديث Local Storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("تمت إضافة المنتج إلى السلة!");
+}
+ </script>
+    </body>
+    </html>

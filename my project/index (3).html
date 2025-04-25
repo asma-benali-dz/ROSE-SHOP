@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ROSE SHOP - افضل المنتجات لجمالك ">
+        <meta name="keywords" content="متجر مكياج, مستحضرات تجميل, مكياج أونلاين, منتجات العناية بالبشرة, أحمر شفاه, كريم أساس, ماسكارا, عروض المكياج, تسوق المكياج">
+        <link rel="stylesheet" href="css/style.css">
+        <title>ROSE SHOP</title>
+        <link rel="icon" href="images/Untitled_logo_3_free-file-removebg-preview.png"type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+    <body>
+        <header>
+            <!-- Navbar -->
+            <div class="nav"> 
+                <img class="logo" src="images/logo.png" alt="شعار ROSE SHOP">
+                <ul>
+                  <li> <a href="#" class="active">الصفحة الرئيسية</a></li>
+                  <li><a href="pages/products.html">منتجاتنا</a></li>
+                  <li><a href="pages/cart.html">السلة</a></li>
+                  <li> <a href="pages/login.html" class="login">حسابي</a></li>
+
+              </ul>
+            </div>
+        </header>
+        <hr class="section-divider">
+ 
+        <section class="coming-soon-section">
+            <h2 class="section-title">✨  ROSE SHOP قريبًا في ✨</h2>
+            <div class="coming-card">
+              <div class="coming-info">
+                
+                <h3>منتجات العناية بالبشرة من</h3>
+                <h4>The Ordinary</h4>
+                <img src="images/قريبا.png" alt="منتج قادم">
+                <h5>جودة عالمية، لبشرة صحية و مشرقة </h5>
+                <p>بكميات محدودة !! كوني أول من يجرّبها</p>
+                <button class="coming-button" disabled>قريبًا</button>
+              </div>
+            </div>
+          </section>
+          
+          <hr class="section-divider">
+
+            
+        <section class="services-section">
+        
+            <div class="slider-container">
+                <h2 class="title">✨ اهم خدماتنا ✨</h2>
+              <div class="slider-track">
+                <img src="images/1.jpg">
+                <img src="images/2.jpg" >
+                <img src="images/3.jpg" >
+                <img src="images/4.jpg" >
+                <img src="images/5.jpg" >
+                
+              </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+        </section>
+        <hr class="section-divider">
+
+        <script>
+
+         const track = document.querySelector(".slider-track");
+            const slides = document.querySelectorAll(".slider-track img");
+            let index = 0;
+          
+            function nextSlide() {
+              index++;
+              if (index >= slides.length) index = 0;
+              track.style.transform = `translateX(-${index * 100}%)`;
+            }
+          
+            setInterval(nextSlide, 4000); 
+        </script>
+         <script>
+            let currentIndex = 0;
+            const totalSlides = 5;
+            const dots = document.querySelectorAll('.dot');
+          
+            function updateDots() {
+              dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+              });
+            }
+          
+            function autoSlide() {
+              currentIndex = (currentIndex + 1) % totalSlides;
+              document.querySelector('.slider-track').style.transform = `translateX(-${currentIndex * 100}%)`;
+              updateDots();
+            }
+          
+            setInterval(autoSlide, 4000); 
+          </script>
+           
+            <!-- prodect-->
+             <div class="prodects">
+                <h2 class="title">✨ منتجاتنا المميزة ✨</h2>
+                <div class="picters">
+                    <div class="card" >
+                        <img  class="picter"src="images/p1.webp" alt="">
+                        <h3>Anua Niacinamide 10% + TXA 4% </h3>
+                        <span class="price">$20.80</span>
+                        <button onclick="window.location.href='pages/products.html'">اشتري الان</button>
+                    </div>
+                    <div  class="card">
+                        <img  class="picter" src="images/p2.jpg" alt="">
+                        <h3>Anua Heartleaf 77% soothing toner</h3>
+                        <span class="price">$16.53</span>
+                        <button onclick="window.location.href='pages/products.html'">اشتري الان</button>
+                    </div>  
+                    <div  class="card">
+                        <img  class="picter" src="images/p3.jpg" alt="">
+                        <h3>Lip sleeping mask</h3>
+                        <span class="price">$14.28</span>
+                        <button onclick="window.location.href='pages/products.html'">اشتري الان</button>
+                    </div>    
+                    <div  class="card" >
+                        <img  class="picter" src="images/p5.jpg" alt="">
+                        <h3>Better Than Palette</h3>
+                        <span class="price">$20.80 </span>
+                        <button onclick="window.location.href='pages/products.html'">اشتري الان</button>
+                    </div>    
+                    <div class="card">
+                        <img  class="picter" src="images/P6.webp" alt="">
+                        <h3>Lip Matter</h3>
+                        <span class="price">$8.00</span>
+                        <button onclick="window.location.href='pages/products.html'">اشتري الان</button>
+                    </div>    
+                    <div class="card">
+                        <img  class="picter" src="images/P7.webp" alt="">
+                        <h3>Han All Fix Mascara 7g
+                        </h3>
+                        <span class="price">$11.99</span>
+                        <button onclick="window.location.href='pages/products.html'">اشتري الان</button>
+                    </div>    
+                    <div class="card">
+                        <img  class="picter" src="images/P8.webp" alt="">
+                        <h3>Lip Mate Pencil
+                        </h3>
+                        <span class="price">$11.19 </span>
+                        <button onclick="window.location.href='pages/products.html'">اشتري الان</button>
+                    </div>      
+                </div>
+            </div>
+            <hr class="section-divider">
+           
+     
+     <script>
+      const userName = localStorage.getItem("userName");
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+    
+      if (isLoggedIn === "true" && userName) {
+        const navList = document.querySelector(".nav ul");
+    
+        const loginLink = document.querySelector("a.login");
+        if (loginLink && loginLink.parentElement) {
+          loginLink.parentElement.remove();
+        }
+    
+        const userLi = document.createElement("li");
+        userLi.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 8px; cursor: default;">
+            <img src="images/صورة المستخدم.jpg" alt="مستخدم" style="width: 30px; height: 30px; border-radius: 50%;">
+            <span style="color: #000; font-weight: bold;">${userName}</span>
+          </div>
+        `;
+        navList.appendChild(userLi);
+      }
+    </script>
+    
+    
+             
+      
+    </body>
+</html>

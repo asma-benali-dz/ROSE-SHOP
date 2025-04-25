@@ -1,0 +1,47 @@
+ 
+.coming-info h5 {
+  font-size: 1.8rem;
+  color: #1d1c1c;
+  margin-bottom: 15px;
+}
+
+.coming-info p {
+  font-size: 1.3rem;
+  color: #f90a0a;
+  margin-bottom: 20px;
+}
+
+.coming-button {
+  background-color: #ef4a89;
+  color: #f8f1f4;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 35px;
+  font-size: 1rem;
+  cursor: not-allowed;
+}
+
+.section-divider {
+  border: none;
+  height: 2px;
+  background-color: #0c0b0b;
+  width: 80%;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+
+.coming-card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.coming-card img:hover {
+  transform: scale(1.08); /* تكبير ناعم */
+}
+
+html {
+  scroll-behavior: smooth;
+}

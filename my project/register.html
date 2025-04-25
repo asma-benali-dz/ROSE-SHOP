@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>register</title>
+  <style>
+    :root {
+      --light-bg: #f7f7f7;
+      --white: #fff;
+      --black: #333;
+      --blue: #3498db;
+      --red: #e74c3c;
+      --orange: #e67e22;
+      --border: 1px solid #ccc;
+    }
+
+    body {
+      background-color: var(--light-bg);
+    }
+
+    .btn,
+    .delete-btn,
+    .option-btn {
+      display: inline-block;
+      padding: 10px 30px;
+      cursor: pointer;
+      font-size: 18px;
+      color: var(--white);
+      border-radius: 5px;
+      text-transform: capitalize;
+    }
+
+    .btn:hover,
+    .delete-btn:hover,
+    .option-btn:hover {
+      background-color: var(--black);
+    }
+
+    .btn {
+      background-color: var(--blue);
+      margin-top: 10px;
+    }
+
+    .delete-btn {
+      background-color: var(--red);
+      margin-top: 10px;
+    }
+
+    .option-btn {
+      background-color: var(--orange);
+    }
+
+    .form-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .form-container form {
+      width: 500px;
+      border-radius: 5px;
+      border: var(--border);
+      padding: 20px;
+      text-align: center;
+      background-color: var(--white);
+    }
+
+    .form-container form h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .form-container form .box {
+      width: 100%;
+      border-radius: 5px;
+      border: var(--border);
+      padding: 12px 14px;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .form-container form p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: var(--black);
+    }
+
+    .form-container form a {
+      color: var(--red);
+    }
+
+    .form-container form p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <form id="register-form" action="" method="post">
+        <h3>register now</h3>
+        <input type="text" id="username" name="name" required placeholder="enter username" class="box">
+        <input type="email" id="email" name="email" required placeholder="enter email" class="box">
+        <input type="password" id="password" name="password" required placeholder="enter password" class="box">
+        <input type="password" id="cpassword" name="cpassword" required placeholder="confirm password" class="box">
+        <input type="submit" name="submit" class="btn" value="register now">
+        <p>already have an account? <a href="login.html">login now</a></p>
+      </form>
+  </div>
+ 
+  <script>
+    document.getElementById("register-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const cpassword = document.getElementById("cpassword").value;
+  
+      if (password !== cpassword) {
+        alert("كلمة المرور غير متطابقة");
+        return;
+      }
+  
+      if (username !== "") {
+      
+        localStorage.setItem("userName", username);
+        localStorage.setItem("isLoggedIn", "true");
+  
+        alert("تم إنشاء الحساب بنجاح!");
+        window.location.href = "../index.html";
+      } else {
+        alert("يرجى إدخال اسم المستخدم.");
+      }
+    });
+  </script>
+  
+</body>
+</html>
